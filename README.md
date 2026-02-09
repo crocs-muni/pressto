@@ -16,6 +16,11 @@ Physical Response Emulation System for Secure Testing Operations is a low-cost, 
 - **Test physical inputs** – Consistently automate physical interaction like button presses or screen taps.  
 - **Endurance testing** – Simulate hours or days of human interaction to reveal wear or intermittent faults.
 - **Automated testing** – Fully automate operation of devices that can’t be driven purely by software, such as IoT appliances, hardware wallets etc.
+
+## As seen in
+
+[Large-Scale Security Analysis of Hardware Wallets](https://link.springer.com/chapter/10.1007/978-3-032-00633-2_21)
+
   
 
 ## Quickstart
