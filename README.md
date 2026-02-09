@@ -18,6 +18,8 @@ Physical Response Emulation System for Secure Testing Operations is a low-cost, 
 - **Automated testing** – Fully automate operation of devices that can’t be driven purely by software, such as IoT appliances, hardware wallets etc.
   
 
+## Quickstart
+Download the full set of models for one PRESSTO instance + printing instructions from [here](stl/quickstart.zip).
 
 
 ## Bill of Materials (BOM)
