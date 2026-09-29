@@ -1,5 +1,5 @@
-# demo of Arduino servo pressing via USB serial
 #!/usr/bin/env python3
+# demo of Arduino servo pressing via USB serial
 """
 Usage (from another script):
     from servos import press_left, press_right, press_both

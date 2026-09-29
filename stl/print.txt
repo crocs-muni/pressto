@@ -1,0 +1,22 @@
+- Recommended print settings:
+  - Material: PLA or PETG
+  - Layer Height: 0.15 mm
+  - Infill: 15–30% for strength
+  - Supports: As needed per part
+
+
+4 x base_inner
+4 x base_outer
+4 x holder
+2 x arm_base
+2 x camera_holder
+20 x ball_joint
+10 x pinion_gear
+10 x actuator_arm_motor_holder
+10 x actuator_arm_base_rack
+10 x actuator_arm_base_stand
+10 x actuator_arm_motor_holder_mount
+10 x actuator_arm_base_motor_holder
+10 x actuator_arm_base_motor_holder_single_hole
+6 x actuator_arm_rack
+6 x actuator_arm_rack_wide

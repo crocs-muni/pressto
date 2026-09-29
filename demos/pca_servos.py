@@ -3,7 +3,7 @@
 PCA9685 servo pressing via I2C (Raspberry Pi)
 
 Usage (from another script):
-    from servos_pca import press_left, press_right, press_both
+    from pca_servos import press_left, press_right, press_both
 
     press_left()
     press_right()

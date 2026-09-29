@@ -1,0 +1,19 @@
+# Python packages that the demos in this directory import, by PyPI project name
+# (an import name is not always the name of the project that provides it).
+#
+# servos.py: "import serial"
+pyserial
+# pca_servos.py: "from adafruit_pca9685 import PCA9685"
+adafruit-circuitpython-pca9685
+# pca_servos.py: "import board" and "import busio"
+Adafruit-Blinka
+# ocr_demo.py: "import pytesseract" (it also needs the Tesseract OCR program, which pip does not install)
+pytesseract
+# ocr_demo.py: "from PIL import Image"
+pillow
+# ocr_demo.py: "import cv2"
+opencv-python
+# ocr_demo.py: "import numpy as np"
+numpy
+# ocr_demo.py: "import matplotlib.pyplot as plt"
+matplotlib

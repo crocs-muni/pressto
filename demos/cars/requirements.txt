@@ -1,0 +1,12 @@
+# Python packages that the cars demo imports, by PyPI project name.
+# The versions that ran at the booth were not recorded.
+# Picamera2 (with libcamera) and GPIO Zero come with Raspberry Pi OS, not from pip: see README.md.
+#
+# cars_pca.py, calibrate.py and test_camera.py: "import cv2" (opencv-python, not a -headless package: calibrate.py and cars_pca.py open windows)
+opencv-python
+# cars_pca.py: "import numpy as np"; calibrate.py: "import cv2, numpy as np"
+numpy
+# cars_pca.py: "from adafruit_pca9685 import PCA9685"
+adafruit-circuitpython-pca9685
+# cars_pca.py: "import board" and "import busio"
+Adafruit-Blinka
