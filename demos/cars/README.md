@@ -1,8 +1,8 @@
 # Cars demo: PRESSTO plays a phone game
 
-<a href="https://github.com/crocs-muni/pressto/releases/tag/v1.0"><img src="../../images/demo/pressto_demo_cars.jpeg" alt="PRESSTO playing the cars game: two servo arms above a phone clamped in the base" width="500"/></a>
+https://github.com/user-attachments/assets/829fcdeb-2ff4-44f2-bf4d-515deed96533
 
-*The picture links to the [PRESSTO `v1.0` release](https://github.com/crocs-muni/pressto/releases/tag/v1.0), which has the video of the demo attached.*
+*PRESSTO playing the cars game: two servo arms tap a phone clamped in the base. The video is also attached to the [PRESSTO `v1.0` release](https://github.com/crocs-muni/pressto/releases/tag/v1.0).*
 
 PRESSTO plays a two-cars phone game: a camera watches the phone's screen and two servo arms tap it. The game shows two cars in four lanes (0 to 3, from the left), with green circles to collect and red squares to avoid. A tap on the left half of the screen switches the left car between lanes 0 and 1, a tap on the right half switches the right car between lanes 2 and 3; the left arm taps the left half, the right arm the right half. The bot taps to move a car away from an object to avoid in its lane, or towards an object to collect in its other lane.
 
