@@ -77,6 +77,7 @@ This project requires a combination of 3D-printed parts, electronics, and standa
 | Component | Notes                                             | Quantity |
 |----------|---------------------------------------------------|----------|
 | Arduino Uno (or compatible) | For controlling servos                            | 1 |
+| PCA9685 servo driver board | Instead of the Arduino: drives the servos from the Raspberry Pi's I²C bus (`demos/pca_servos.py`; the cars demo needs it) — see [Software / demos](#software--demos) | 1 |
 | Raspberry Pi (any model with camera support) | For running OCR, camera capture, and automation scripts | 1 |
 | SG90 Micro Servos | 2 per arm (e.g., one for press, one for movement) | ≥ 2 |
 | Raspberry Pi Camera or USB Webcam | Used for OCR display capture                      | 1 |
@@ -112,6 +113,8 @@ This project requires a combination of 3D-printed parts, electronics, and standa
 
 <br>
 
+https://github.com/user-attachments/assets/1835ff0b-9b34-456d-8118-16ac72f5a7d0
+
 The <strong>base</strong> forms the main support structure of the setup. It consists of 8 interlocking 3D-printed parts that slot together like a puzzle to create a rigid square frame.
 
 ### Required Parts
@@ -141,6 +144,8 @@ The <strong>base</strong> forms the main support structure of the setup. It cons
 <summary><strong>Holder (Device Clamp)</strong></summary>
 
 <br>
+
+https://github.com/user-attachments/assets/3f84651d-e31d-48d4-9fe7-d6d4f618545d
 
 The <strong>holder</strong> secures the device in place using a simple mechanical clamp. It is fastened through the radial slots on the base and tightened manually using M4 hardware.
 
@@ -177,6 +182,8 @@ The M4 screw heads sit in a slot under the base, so the base does not rock.
 <summary><strong>Camera Arm</strong></summary>
 
 <br>
+
+https://github.com/user-attachments/assets/edb7769d-4403-4b14-b595-5e9bed18ebf9
 
 The <strong>camera arm</strong> consists of three main components:
 1. <strong>Arm Base</strong> – fits into the outer slots of the main base, no fasteners required.
@@ -218,6 +225,8 @@ The photos show an earlier print with a square lens opening; the published CAD h
 
 <br>
 
+https://github.com/user-attachments/assets/0f45c5b1-b3c8-40e6-93fd-b3c531c6c05f
+
 The <strong>pinion gear</strong> connects to the SG90 servo’s output shaft through the hub of a cut-down servo horn. It is used to transfer rotational motion from the servo to other moving parts in the actuator assembly.
 
 A full arm uses two pinions: one for the press, one for moving the pressing part back and forth.
@@ -250,6 +259,8 @@ The pinion caps over the hub of a stock SG90 horn cut free of its arms; the horn
 <summary><strong>Actuator Arm Base</strong></summary>
 
 <br>
+
+https://github.com/user-attachments/assets/e7f4f2c5-6150-4aed-b15f-f9d19f16e0b9
 
 The Actuator Arm Base moves the actuator over the device and retracts it to give the camera an unobstructed view.
 
@@ -300,6 +311,8 @@ The Actuator Arm Base moves the actuator over the device and retracts it to give
 
 <br>
 
+https://github.com/user-attachments/assets/45a5d485-542e-479c-9c36-7812b5d5357f
+
 The actuator arm is the moving element that pushes buttons or touches a screen.  
 It connects directly to the [`actuator_arm_base_rack.stl`](stl/actuator_arm_base/actuator_arm_base_rack.stl) and is driven by an SG90 servo with the [`pinion_gear.stl`](stl/pinion_gear/pinion_gear.stl) attached.
 
@@ -334,6 +347,8 @@ It connects directly to the [`actuator_arm_base_rack.stl`](stl/actuator_arm_base
 
 ### Connecting the Actuator Arm to the Base
 
+https://github.com/user-attachments/assets/70678a89-c214-434f-8ad6-3530a97f0d67
+
 No screws are needed for this step – simply slide the [`actuator_arm_base_rack.stl`](stl/actuator_arm_base/actuator_arm_base_rack.stl) into the square mount hole in the middle of the [`actuator_arm_motor_holder_mount.stl`](stl/actuator_arm/actuator_arm_motor_holder_mount.stl) plate until it seats fully.
 
 | Step | Image |
@@ -359,6 +374,10 @@ The [`demos/`](demos/) directory holds the example code. The table repeats what 
 Both Python servo files end with a small command-line test: `python3 demos/servos.py --left` (also `--right`, `--both`, and `--port /dev/ttyACM0` to pick the serial port) and `python3 demos/pca_servos.py --both` (also `--left`, `--right`).
 
 `ocr_demo.py` is a short demo: run it on the Raspberry Pi with `python3 demos/ocr_demo.py`. It needs a display, because it shows the processed image (`plt.show()`) before it prints the detected text, and it calls `rpicam-still` to capture the image.
+
+The PCA9685 board sits on the Raspberry Pi's I²C bus: SDA to GPIO 2 (physical pin 3), SCL to GPIO 3 (physical pin 5), VCC (the board's logic supply, 3 to 5 V) to the Raspberry Pi's 3.3 V, GND to GND. The cars demo's driver uses the board's default address, 0x40; `pca_servos.py` puts the left servo on channel 15 and the right one on channel 12 (`set_channels()` changes them). Enable I²C and check the board with `i2cdetect -y 1` as in step 2 of the cars demo's [Install](demos/cars/README.md#install).
+
+On the Raspberry Pi, 3.3 V is physical pin 1 and GND is, for example, physical pin 6; the servos' 5 V supply goes to the board's `V+` and `GND` screw terminal, each servo plugs onto its channel with its ground wire (brown or black) on the `GND` row at the board's edge, and `OE` and the address jumpers stay unconnected.
 
 The docstring of `pca_servos.py` carries two notes, quoted here verbatim:
 
